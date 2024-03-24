@@ -14,7 +14,7 @@ logging.basicConfig(filename='app.log', level=logging.INFO)
 @require_POST
 @csrf_exempt
 def webhook(request):
-    # Проверка подлинности запроса
+
     received_sign = request.META.get('HTTP_X_HUB_SIGNATURE')
     if received_sign is None:
         return HttpResponseForbidden()
